@@ -8,20 +8,24 @@ import "bootstrap/dist/css/bootstrap.css";
 import Controller from "MVC/Controller";
 
 // main function - starting point of this web app
-let rideHistory = new RideHistory(), controller = new Controller(rideHistory)
+let rideHistory = new RideHistory(),
+    controller = new Controller(rideHistory)
 
 let main = () => {
-  controller.load()
-  const element = <App ctr={controller} />
-  ReactDOM.render(
-    element,
-    document.getElementById('root')
-  )
+    controller.load()
+    const element = < App ctr = {
+        controller
+    }
+    />
+    ReactDOM.render(
+        element,
+        document.getElementById('root')
+    )
 }
 
 window.onload = main
-window.onbeforeunload = function () {
-  controller.save();
+window.onbeforeunload = function() {
+    controller.save();
 }
 
 

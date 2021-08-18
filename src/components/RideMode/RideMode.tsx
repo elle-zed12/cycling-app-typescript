@@ -98,7 +98,7 @@ class RideMode extends Component<{ ctr: Controller }, IAddRideComponents>{
               <button id='startBtn' className='button' onClick={this.handleStartRideClick} type="submit"
               >
                 START NEW RIDE
-        </button>
+              </button>
             </form>
 
           </div>

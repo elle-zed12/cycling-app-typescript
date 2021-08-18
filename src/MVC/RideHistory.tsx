@@ -5,9 +5,9 @@ const STORAGE_KEY = 'cyclingApp';
 
 //interfaces
 interface FilterInterface {
-    getRidesBySpeed(speed1: number, speed2: number): Array<any>
-    getRidesByDuration(duration1: number, duration2: number): Array<any>
-    getRidesByDistance(distance1: number, distance2: number): Array<any>
+    getRidesBySpeed(speed1: number, speed2: number): Array < any >
+        getRidesByDuration(duration1: number, duration2: number): Array < any >
+        getRidesByDistance(distance1: number, distance2: number): Array < any >
 }
 
 interface StorageInterface {
@@ -40,8 +40,8 @@ interface SearchInterface {
 //1.    Create a whole that acts as a Facade for parts
 class RideHistory implements FilterInterface, StorageInterface, EditorInterface, SortInterface, SearchInterface {
 
-    private allMyRides: Array<any>
-    private beforeEditFromCache: string
+    private allMyRides: Array < any >
+        private beforeEditFromCache: string
     private beforeEditToCache: string
     private visibility: string
 
@@ -59,7 +59,7 @@ class RideHistory implements FilterInterface, StorageInterface, EditorInterface,
         //FEATURE 10. Validate inputs.
         try {
             if (!(newStart instanceof Date)) throw "Invalid start date"
-            if (!(newFinish! instanceof Date)) throw "Invalid finish date"
+            if (!(newFinish!instanceof Date)) throw "Invalid finish date"
             if (isNaN(newDistance)) throw "Invalid distance field"
             if (newDistance === null) throw "Empty distance field"
             if (newFrom === '') throw "Empty location from"
@@ -80,19 +80,19 @@ class RideHistory implements FilterInterface, StorageInterface, EditorInterface,
     }
 
     // FEATURE 4. Filter parts.
-    public getRidesByDistance(distance1: number, distance2: number): Array<any> {
-        return this.allMyRides.filter(function (ride) {
+    public getRidesByDistance(distance1: number, distance2: number): Array < any > {
+        return this.allMyRides.filter(function(ride) {
             return distance1 < ride.distance && ride.distance < distance2
         })
     }
-    public getRidesByDuration(duration1: number, duration2: number): Array<any> {
+    public getRidesByDuration(duration1: number, duration2: number): Array < any > {
         return this.allMyRides.filter(ride => duration1 < ride.duration && ride.duration < duration2)
     }
-    public getRidesBySpeed(speed1: number, speed2: number): Array<any> {
+    public getRidesBySpeed(speed1: number, speed2: number): Array < any > {
         return this.allMyRides.filter(ride => speed1 < ride.speed && ride.speed < speed2)
     }
 
-    public getRidesByStatus(completed: boolean): Array<any> {
+    public getRidesByStatus(completed: boolean): Array < any > {
         return this.allMyRides.filter(ride => ride.status === completed)
     }
 
@@ -134,8 +134,8 @@ class RideHistory implements FilterInterface, StorageInterface, EditorInterface,
         if (!ride) {
             return
         }
-        if (!ride.startLocation || !ride.finishLocation
-            || !ride.distance || !ride.startTime || !ride.finishTime) {
+        if (!ride.startLocation || !ride.finishLocation ||
+            !ride.distance || !ride.startTime || !ride.finishTime) {
             this.removeRide(ride)
         }
         ride.startLocation = ride.startLocation.trim()
@@ -164,12 +164,12 @@ class RideHistory implements FilterInterface, StorageInterface, EditorInterface,
         }
     }
     // FEATURE 12.	A calculation across many parts
-    public getTotalRidesCount(ridesArray: Array<any>): number {
+    public getTotalRidesCount(ridesArray: Array < any > ): number {
         let activityCount: number = ridesArray.length
         return activityCount
     }
 
-    public getTotalDuration(ridesArray: Array<any>): number {
+    public getTotalDuration(ridesArray: Array < any > ): number {
         let result: number = 0
         for (let activity of ridesArray) {
             let duration: number = activity.duration
@@ -178,7 +178,7 @@ class RideHistory implements FilterInterface, StorageInterface, EditorInterface,
         return result
     }
 
-    public getTotalDistance(ridesArray: Array<any>): number {
+    public getTotalDistance(ridesArray: Array < any > ): number {
         let result: number = 0
         for (let aRide of ridesArray) {
             let distance: number = aRide.distance
@@ -257,7 +257,7 @@ class RideHistory implements FilterInterface, StorageInterface, EditorInterface,
         return this.allMyRides.filter(ride => ride.title.includes(aLocation))
     }
 
-    
+
     // FEATURE 14. Find a part given a search criteria
     public findRideByDate(aDate: string) {
         return this.allMyRides.filter(ride => ride.getLocaleDate(ride.startTime) === aDate)

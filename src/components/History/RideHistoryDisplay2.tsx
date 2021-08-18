@@ -92,20 +92,21 @@ class RideHistoryDisplay2 extends React.Component<{ ctr: any }, { rides: any }, 
         </Collapsible>
 
         <section><h2>Ride History</h2>
-          <nav className="display-btns"><DropdownButton
-            id="dropdown-basic-button"
-            title="Sort by"
-            onSelect={this.handleSorting}
-            drop='down'>
-            <Dropdown.Item eventKey="1" disabled>Title (A-Z)</Dropdown.Item>
-            <Dropdown.Item eventKey="2" disabled>Title (Z-A)</Dropdown.Item>
-            <Dropdown.Item eventKey="3">Duration (low-high)</Dropdown.Item>
-            <Dropdown.Item eventKey="4">Duration (high-low)</Dropdown.Item>
-            <Dropdown.Item eventKey="5">Speed (low-high)</Dropdown.Item>
-            <Dropdown.Item eventKey="6">Speed (high-low)</Dropdown.Item>
-            <Dropdown.Item eventKey="7">Distance (low-high)</Dropdown.Item>
-            <Dropdown.Item eventKey="8">Distance (high-low)</Dropdown.Item>
-          </DropdownButton>
+          <nav className="display-btns">
+            <DropdownButton
+              id="dropdown-basic-button"
+              title="Sort by"
+              onSelect={this.handleSorting}
+              drop='down'>
+              <Dropdown.Item eventKey="1" disabled>Title (A-Z)</Dropdown.Item>
+              <Dropdown.Item eventKey="2" disabled>Title (Z-A)</Dropdown.Item>
+              <Dropdown.Item eventKey="3">Duration (low-high)</Dropdown.Item>
+              <Dropdown.Item eventKey="4">Duration (high-low)</Dropdown.Item>
+              <Dropdown.Item eventKey="5">Speed (low-high)</Dropdown.Item>
+              <Dropdown.Item eventKey="6">Speed (high-low)</Dropdown.Item>
+              <Dropdown.Item eventKey="7">Distance (low-high)</Dropdown.Item>
+              <Dropdown.Item eventKey="8">Distance (high-low)</Dropdown.Item>
+            </DropdownButton>
           </nav>
           <ul id='ride-history'>
             {this.props.ctr.getAllRides().length === 0 &&
@@ -148,4 +149,4 @@ class RideHistoryDisplay2 extends React.Component<{ ctr: any }, { rides: any }, 
   }
 }
 
-export default RideHistoryDisplay2
+export default RideHistoryDisplay2;

@@ -26,23 +26,23 @@ class AddRide extends React.Component <{ctr : any}> {
     <section id="add-ride">
     <h2>Add a ride</h2>
     <form onSubmit={this.handleSubmit}>
-    <label className="add-ride">Date</label>
-        <input type="date" id="date" placeholder="Input the date"/>
-        <label className="add-ride">Start time</label>
-        <input type="time" id="start-time" placeholder="Start time"/>
-        <label className="add-ride">Finish time</label>
-        <input type="time" id="finish-time" placeholder="Inut the finish time" />
-        <label className="add-ride">Start location</label>
-        <input type="text" id="start-location" placeholder="Inut the start location" />
-        <label className="add-ride">Finish location</label>
-        <input type="text" id="finish-location" placeholder="Inut the finish location" />
-        <label className="add-ride">Distance</label>
-        <input type="number" id="distance" placeholder="Inut the distance" />
-        <button type="submit">Add</button>   
+      <label className="add-ride">Date</label>
+          <input type="date" id="date" placeholder="Input the date"/>
+          <label className="add-ride">Start time</label>
+          <input type="time" id="start-time" placeholder="Start time"/>
+          <label className="add-ride">Finish time</label>
+          <input type="time" id="finish-time" placeholder="Inut the finish time" />
+          <label className="add-ride">Start location</label>
+          <input type="text" id="start-location" placeholder="Inut the start location" />
+          <label className="add-ride">Finish location</label>
+          <input type="text" id="finish-location" placeholder="Inut the finish location" />
+          <label className="add-ride">Distance</label>
+          <input type="number" id="distance" placeholder="Inut the distance" />
+          <button type="submit">Add</button>   
     </form>
     </section>
     )
   }
 }
 
-export default AddRide
+export default AddRide;
