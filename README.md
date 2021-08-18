@@ -1,3 +1,7 @@
+This is a cycling app that we created for our level 6 course, Web and Mobile Development. We are a team of two in this project. 
+Our task was to write the model in JavaScript and test it using Jasmine Framework. 
+On the second part, we have to re-write the model using TypeScript and create a user interface for the app.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
